@@ -7,7 +7,7 @@ import {
 } from './index';
 
 test('It returns the capitalized string', () => {
-  expect(capitalize('microverse')).toBe('Microverse');
+  expect(capitalize('microVerse')).toBe('Microverse');
 });
 
 test('It returns the reversed string', () => {
@@ -15,8 +15,8 @@ test('It returns the reversed string', () => {
 });
 
 test('It adds numbers', () => {
-  expect(calculator.add(2, 3, 5)).toBe(7);
-  expect(calculator.add(3, 2, 5)).toBe(7);
+  expect(calculator.add(2, 3, 5)).toBe(10);
+  expect(calculator.add(3, 2, 5)).toBe(10);
 });
 
 test('It substructs numbers', () => {
@@ -38,15 +38,17 @@ test('It divides numbers', () => {
   expect(calculator.divide(-3, 3, 7)).toBeCloseTo(-0.1428571429);
 });
 
-test('It encrypt string', () => {
+test('It encrypts string', () => {
   expect(caesar(1).encrypt('microverse')).toBe('njdspwfstf');
+  expect(caesar(5).encrypt('miCro!verse')).toBe('rnHwt!ajwxj');
 });
 
-test('It decrypt string', () => {
+test('It decrypts string', () => {
   expect(caesar(1).decrypt('njdspwfstf')).toBe('microverse');
+  expect(caesar(5).decrypt('rnHwt! Ajwxj?')).toBe('miCro! Verse?');
 });
 
-test('It returns statistical symmary', () => {
+test('It returns statistical summary', () => {
   const { average, min, max, length } = analyze([10, 7, 12, 24, 30]);
   expect(min).toBe(7);
   expect(max).toBe(30);
