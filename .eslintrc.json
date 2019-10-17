@@ -5,7 +5,7 @@
   "env": {
     "browser": true
   },
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "eol-last": 0,
