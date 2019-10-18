@@ -42,11 +42,7 @@ export const caesar = key => {
   };
 
   const toString = codes => {
-    let res = '';
-    codes.forEach(code => {
-      res += String.fromCharCode(code);
-    });
-    return res;
+    return codes.reduce((acc, cur) => acc + String.fromCharCode(cur), '');
   };
 
   const encrypt = string => {
